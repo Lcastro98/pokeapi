@@ -3,6 +3,7 @@ import { CharacterService } from '../characters.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Character } from '../character';
+import { range } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -28,11 +29,11 @@ export class CharactersComponent implements OnInit {
 
  getCharacters(){
    let character;
-   for(let i = 1; i <= 150; i++){
-   this.characterService.getCharacters(i).subscribe(
+   range(1, 150).subscribe( id => 
+   this.characterService.getCharacters(id).subscribe(
      res => {
       character = {
-         id: i,
+         id: id,
          name: res.name,
          image: res.sprites.front_default
        };
@@ -43,8 +44,8 @@ export class CharactersComponent implements OnInit {
      err => {
       console.log(err)
      }
-   )}
- }
+   )
+ )}
 
  applyFilter(event: Event) {
   const filterValue = (event.target as HTMLInputElement).value;

@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { environment } from '../environments/environment';
+import { Character } from './character';
 
 @Injectable({
     providedIn:'root'
@@ -15,6 +16,6 @@ export class CharacterService {
 
 
     getCharacters(id:number){
-        return this.http.get<any>(`${this.baseUrl}/pokemon/${id}`)
+        return this.http.get<Character|any>(`${this.baseUrl}/pokemon/${id}`)
     }
 }
