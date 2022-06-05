@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Character } from "./character";
+import { environment } from '../environments/environment';
 
 @Injectable({
     providedIn:'root'
@@ -9,13 +9,12 @@ import { Character } from "./character";
 
 export class CharacterService {
 
-    baseUrl: string;
+    baseUrl = environment.baseUrl;
 
-    constructor(private http: HttpClient){
-        this.baseUrl = 'https://pokeapi.co/api/v2/pokemon'
+    constructor(private http: HttpClient){ }
+
+
+    getCharacters(id:number){
+        return this.http.get<any>(`${this.baseUrl}/pokemon/${id}`)
     }
-
-
-    getDatails(id:number){
-        return this.http.get<Character>(`${this.baseUrl}/${id})
-    }
+}
