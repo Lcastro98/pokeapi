@@ -31,20 +31,16 @@ export class CharactersComponent implements OnInit {
    let character;
    range(1, 150).subscribe( id => 
    this.characterService.getCharacters(id).subscribe(
-     res => {
+    (res) => {
       character = {
          id: id,
          name: res.name,
-         image: res.sprites.front_default
+         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
        };
        this.data.push(character)
        this.dataSource = new MatTableDataSource<Character>(this.data)
        this.dataSource.paginator = this.paginator
-     },
-     err => {
-      console.log(err)
-     }
-   )
+    })
  )}
 
  applyFilter(event: Event) {

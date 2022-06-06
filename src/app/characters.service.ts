@@ -16,6 +16,7 @@ export class CharacterService {
 
 
     getCharacters(id:number){
-        return this.http.get<Character|any>(`${this.baseUrl}/pokemon/${id}`)
+        return this.http.get<Character>(`${this.baseUrl}/pokemon/${id}`)
+        
     }
 }
