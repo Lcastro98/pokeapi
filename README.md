@@ -16,3 +16,10 @@ Puede filtrar por nombre o por id del pokemon
 Si no existe alguna coincidencia se mostrará el siguiente mensaje
 
 ![text alert](https://github.com/Lcastro98/pokeapi/blob/master/src/assets/img/filterNotFound.JPG)
+
+### Detalle
+De manera adicional, se agrega la posibilidad de conocer algunos otros detalles del pokemon al hacer click sobre él en la tabla. (Aunque funciona, esta parte sigue en construcción).
+
+![text alert](https://github.com/Lcastro98/pokeapi/blob/master/src/assets/img/card.JPG)
+
+Puede volver a ver todos los pokemons dandole click al logo de Pokemon ubicado en el header.
