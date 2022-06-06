@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Character } from '../character';
 import { range } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -21,7 +22,7 @@ export class CharactersComponent implements OnInit {
   paginator!: MatPaginator;
 
 
-  constructor(private characterService: CharacterService) { }
+  constructor(private characterService: CharacterService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCharacters()
@@ -51,4 +52,7 @@ export class CharactersComponent implements OnInit {
     this.dataSource.paginator.firstPage();
   }
 }
+  getRow(row:Character){
+    this.router.navigateByUrl(`detail/${row.id}`)
+  }
 }
