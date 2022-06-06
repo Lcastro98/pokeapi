@@ -6,7 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../shared/material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,16 +16,15 @@ import { AppRoutingModule } from './app-routing.module';
     HeaderComponent,
     CharactersComponent,
     CharacterDetailComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
